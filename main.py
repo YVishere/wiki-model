@@ -5,10 +5,16 @@ import matplotlib.pyplot as plt
 import time
 
     
-def scatter_plot(X, y, blockProgram = False):
+def scatter_plot(X, y, labels, blockProgram = False):
     plt.figure()
     plt.scatter(X, y)
-    plt.show(block = blockProgram)
+
+    # if labels is not None:
+    #     for i, label in enumerate(labels):
+    #         plt.annotate(label, (X[i], y[i]))
+    
+    plt.show(block=blockProgram)
+    plt.close()
     
 def plot_graph(X, y, blockProgram = False):
     plt.plot(X, y)
@@ -29,15 +35,15 @@ if __name__ == '__main__':
     uarr = Scraper.startScraping(subject, result)
     end = time.time()
     print("Time taken to scrape",subject,": ", round(end-start, 3),"seconds")
-    
-    basewX = np.array([1])
-    wX = np.array([])
-    wX = np.append(wX, basewX)
+
+    basewY = np.array([1])
+    wY = np.array([])
+    wY = np.append(wY, basewY)
 
     #Processing weights
     for i in range(1, len(uarr)):
-        nw = new_weights(basewX, i, 5)
-        wX = np.append(wX, nw)
+        nw = new_weights(basewY, i, 5)
+        wY = np.append(wY, nw)
 
     start = time.time()
     #Extracting number of links from each page
@@ -46,6 +52,6 @@ if __name__ == '__main__':
     print("Time taken: ", round(end-start, 3),"seconds")
 
     #Plot data
-    scatter_plot(range(0, len(wX)), wX)
+    scatter_plot(range(0, len(wY)), wY)
     scatter_plot(range(0,len(uarr)), output)
-    scatter_plot(output, wX, True)
+    scatter_plot(output, wY, uarr, True)
