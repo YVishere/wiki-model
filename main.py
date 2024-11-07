@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import time
 
     
-def scatter_plot(X, y, labels, blockProgram = False):
+def scatter_plot(X, y, blockProgram = False):
     plt.figure()
     plt.scatter(X, y)
 
@@ -52,6 +52,6 @@ if __name__ == '__main__':
     print("Time taken: ", round(end-start, 3),"seconds")
 
     #Plot data
-    scatter_plot(range(0, len(wY)), wY)
-    scatter_plot(range(0,len(uarr)), output)
-    scatter_plot(output, wY, uarr, True)
+    # scatter_plot(range(0, len(wY)), wY)
+    # scatter_plot(range(0,len(uarr)), output)
+    # scatter_plot(output, wY, True)

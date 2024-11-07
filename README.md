@@ -10,4 +10,4 @@ Scraper.py: Helper file to scrape through wikipedia. If fast fast scrape is enab
 Slave.py: Helper file for Multiprocess related commands.
 
 Possible algorithm:
-Parellel process on a constant number of links per wikipedia page --- Adds more importance on filtering out non noun wikipedia links.
+~~Parellel process on a constant number of links per wikipedia page --- Adds more importance on filtering out non noun wikipedia links.~~
